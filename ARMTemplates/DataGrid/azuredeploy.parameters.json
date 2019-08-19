@@ -1,15 +1,29 @@
 {
+
     "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json",
+
     "contentVersion": "1.0.0.0",
+
     "parameters": {
+
         "eventGridTopicName": {
-            "value": "SBD-Topic0001
+
+            "value": "GEN-UNIQUE"
+
         },
+
         "eventGridSubscriptionName": {
-            "value": "SBD-EG-0001"
+
+            "value": "GEN-UNIQUE"
+
         },
+
         "eventGridSubscriptionUrl": {
-            "value": "https://prod-103.westeurope.logic.azure.com:443/workflows/2f93d321c081400daee59546e4d89429/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=2orrpfdzQcoFjsHUfgVJml8JhqamMA42XqMZxnJy7Ew"
+
+            "value": "https://requestb.in/1jz6i2h1"
+
         }
+
     }
+
 }
