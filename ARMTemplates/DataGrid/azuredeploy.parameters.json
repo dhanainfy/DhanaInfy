@@ -8,13 +8,13 @@
 
         "eventGridTopicName": {
 
-            "value": "SBD-Topic-001"
+            "value": "sbdtopic001"
 
         },
 
         "eventGridSubscriptionName": {
 
-            "value": "SBD-Topic-001"
+            "value": "sbdtopic001"
 
         },
 
