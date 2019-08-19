@@ -8,13 +8,13 @@
 
         "eventGridTopicName": {
 
-            "value": "GEN-UNIQUE"
+            "value": "SBD-Topic-001"
 
         },
 
         "eventGridSubscriptionName": {
 
-            "value": "GEN-UNIQUE"
+            "value": "SBD-Topic-001"
 
         },
 
