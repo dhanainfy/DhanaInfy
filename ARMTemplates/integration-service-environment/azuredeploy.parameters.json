@@ -3,13 +3,13 @@
   "contentVersion": "1.0.0.0",
   "parameters": {
       "integrationServiceEnvironmentName": {
-          "value": "GEN-UNIQUE"
+          "value": "SBD-ISE-DEV"
       },
       "managedConnectors": {
         "value": ["servicebus", "azureblob"]
       },
       "vnetName": {
-          "value": "GEN-UNIQUE"
+          "value": "SBD-VNTest1"
       },
       "vnetAddressPrefix": {
           "value": "10.0.0.0/22"
