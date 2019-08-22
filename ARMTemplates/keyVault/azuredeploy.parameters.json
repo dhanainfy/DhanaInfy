@@ -8,13 +8,13 @@
 
     "keyVaultName": {
 
-      "value": "GEN-UNIQUE"
+      "value": "sbd-myapp-prod-kv"
 
     },
 
     "objectId": {
 
-      "value": "GEN-AZUREAD-OBJECTID"
+      "value": "SBD-AZUREAD-OBJECTID"
 
     },
 
