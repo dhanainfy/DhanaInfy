@@ -9,7 +9,7 @@
             "value": "Development"
         },
         "managedConnectors": {
-          "value": ["servicebus", "azureblob","sql","ftp","azurefile","azurequeues","azuretables","sftpwithssh","sftpwithssh","x12","documentdb","eventhubs","mq","sqldw","db2","smtp","si3270"]
+          "value": ["servicebus", "azureblob","sql","ftp","azurefile","azurequeues","azuretables","sftpwithssh","x12","documentdb","eventhubs","mq","sqldw","db2","smtp","si3270"]
         },
         "vnetName": {
             "value": "global-c4e-eus-dev-int-vnet"
