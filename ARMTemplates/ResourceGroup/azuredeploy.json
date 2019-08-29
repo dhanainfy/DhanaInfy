@@ -5,9 +5,16 @@
         "rgName": {
             "type": "string"
         },
+        "EnvironmentName": {
+            "type": "string",
+            "metadata": {
+              "description": "The name of the Integration Service Environment."
+            }
+          },
         "rgLocation": {
             "type": "string"
         }
+          
     },
     "variables": {},
     "resources": [
@@ -16,6 +23,12 @@
             "apiVersion": "2018-05-01",
             "location": "[parameters('rgLocation')]",
             "name": "[parameters('rgName')]",
+            
+            "tags":{
+                "Environment": "[parameters('EnvironmentName')]",
+                "Note":"Resource Group for SBD Dev Environment" ,
+                "Location": "[parameters('rgName')]"
+            },
             "properties": {}
         }
     ],
