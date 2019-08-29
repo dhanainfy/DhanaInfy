@@ -223,19 +223,6 @@
               }
           }
       },
-      {
-        "apiVersion": "2019-05-01",
-        "type": "Microsoft.Logic/integrationServiceEnvironments/ManagedApis",
-        "name": "[concat(parameters('integrationServiceEnvironmentName'), '/', parameters('managedConnectors')[copyindex()])]",
-        "dependsOn": [
-          "[concat('Microsoft.Logic/integrationServiceEnvironments/', parameters('integrationServiceEnvironmentName'))]"
-        ],
-        "copy": {
-            "name": "queueCopy",
-            "count": "[length(parameters('managedConnectors'))]"
-        },
-        "properties": {
-        }
-      }
+      
   ]
 }
