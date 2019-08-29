@@ -3,11 +3,13 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
       "rgName":{
-        "value": "sbddevtest1"
+        "value": "GLOBAL-C4E-INT-DEV-EUS-RG"
       },
-
+      "EnvironmentName": {
+        "value": "Development"
+    },
       "rgLocation":{
-        "value": "West Europe"
+        "value": "East US"
       }   
    
     }
