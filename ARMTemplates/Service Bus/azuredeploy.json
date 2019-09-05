@@ -20,13 +20,7 @@
           "description": "Name of the Queue"
         }
       },
-      "serviceBusQueueName2": {
-        "type": "string",
-        "metadata": {
-          "description": "Name of the Queue"
-        }
-      },
-      "serviceBusSku": {
+        "serviceBusSku": {
         "type": "string",
         "allowedValues": [
           "Basic",
