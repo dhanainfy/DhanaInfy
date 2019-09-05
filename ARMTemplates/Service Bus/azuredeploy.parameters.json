@@ -27,7 +27,7 @@
       "value": "corp-part-m2m-eus-sbtopic-sub1"
     },
     "serviceBusSubscriptionName2": {
-      "value": "corp-part-m2m-eus-sbtopic-sub1"
+      "value": "corp-part-m2m-eus-sbtopic-sub2"
     },
     "serviceBusRuleName": {
       "value": "corp-part-m2m-eus-sbtopic-rule"
