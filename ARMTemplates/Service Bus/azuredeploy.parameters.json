@@ -3,7 +3,7 @@
   "contentVersion": "1.0.0.0",
   "parameters": {
     "serviceBusNamespaceName": {
-      "value": "corp-part-m2m-eus-sb001"
+      "value": "corppartsb001"
     },
     "serviceBusTopicName": {
       "value": "corp-part-m2m-eus-sbtopic"
