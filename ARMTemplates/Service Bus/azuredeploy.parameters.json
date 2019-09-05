@@ -3,7 +3,7 @@
   "contentVersion": "1.0.0.0",
   "parameters": {
     "serviceBusNamespaceName": {
-      "value": "corppartsb001"
+      "value": "corpsb001"
     },
     "serviceBusTopicName": {
       "value": "corp-part-m2m-eus-sbtopic"
@@ -23,7 +23,10 @@
          "BusinessUnit": "IT"
     }
     },
-    "serviceBusSubscriptionName": {
+    "serviceBusSubscriptionName1": {
+      "value": "corp-part-m2m-eus-sbtopic-sub1"
+    },
+    "serviceBusSubscriptionName2": {
       "value": "corp-part-m2m-eus-sbtopic-sub1"
     },
     "serviceBusRuleName": {
