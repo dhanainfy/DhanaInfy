@@ -3,14 +3,32 @@
   "contentVersion": "1.0.0.0",
   "parameters": {
     "serviceBusNamespaceName": {
-      "value": "corpm2msbns001"
+      "value": "corp-part-m2m-eus-sb"
     },
     "serviceBusTopicName": {
-      "value": "corp-part-m2m-ue-sbtopic"
+      "value": "corp-part-m2m-eus-sbtopic"
   },
   "serviceBusQueueName1": {
-    "value": "corp-part-m2m-ue-sbque1"
+    "value": "corp-part-m2m-eus-sbque1"
   },
+  "tagValues":{
+    "value":{
+        "BillTo" : "ITChargebackBizCC",
+        "Owner":"EmailIdC4E@sbdinc",
+        "ProjectName":"Order",
+        "ProjectVersion":"V3",
+         "DataProfile": "Internal",
+         "Environment":"DEV" ,
+         "Tier": "Front End" ,
+         "BusinessUnit": "IT"
+    }
+    },
+    "serviceBusSubscriptionName": {
+      "value": "corp-part-m2m-eus-sbtopic-sub1"
+    },
+    "serviceBusRuleName": {
+      "value": "corp-part-m2m-eus-sbtopic-rule"
+    },
      "serviceBusSku": {
       "value": "Standard"
     }
