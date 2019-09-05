@@ -3,9 +3,15 @@
   "contentVersion": "1.0.0.0",
   "parameters": {
     "serviceBusNamespaceName": {
-      "value": "SBD-SB-010"
+      "value": "corp-part-m2m-eus-sb"
     },
-    "serviceBusSku": {
+    "serviceBusTopicName": {
+      "value": "corp-part-m2m-eus-sbtopic"
+  },
+  "serviceBusQueueName1": {
+    "value": "corp-part-m2m-eus-sbque1"
+  },
+     "serviceBusSku": {
       "value": "Standard"
     }
   }
