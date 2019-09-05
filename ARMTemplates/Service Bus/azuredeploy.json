@@ -129,7 +129,7 @@
                     "name": "[parameters('serviceBusRuleName')]",
                     "type": "Rules",
                     "dependsOn": [
-                      "[parameters('serviceBusSubscriptionName')]"
+                      "[parameters('serviceBusSubscriptionName1')]"
                     ],
                     "properties": {
                       "filterType": "SqlFilter",
@@ -164,7 +164,7 @@
                     "name": "[parameters('serviceBusRuleName')]",
                     "type": "Rules",
                     "dependsOn": [
-                      "[parameters('serviceBusSubscriptionName')]"
+                      "[parameters('serviceBusSubscriptionName2')]"
                     ],
                     "properties": {
                       "filterType": "SqlFilter",
