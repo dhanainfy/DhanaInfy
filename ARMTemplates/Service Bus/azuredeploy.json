@@ -20,6 +20,9 @@
           "description": "Name of the Queue"
         }
       },
+      "tagValues": {
+        "type": "object"
+                },
         "serviceBusSku": {
         "type": "string",
         "allowedValues": [
@@ -30,6 +33,18 @@
         "defaultValue": "Standard",
         "metadata": {
           "description": "The messaging tier for service Bus namespace"
+        }
+      },
+      "serviceBusSubscriptionName": {
+        "type": "string",
+        "metadata": {
+          "description": "Name of the Subscription"
+        }
+      },
+      "serviceBusRuleName": {
+        "type": "string",
+        "metadata": {
+          "description": "Name of the Rule"
         }
       },
       "location": {
@@ -51,6 +66,16 @@
         "name": "[parameters('serviceBusNamespaceName')]",
         "type": "Microsoft.ServiceBus/namespaces",
         "location": "[parameters('location')]",
+        "tags": {
+          "Environment": "[parameters('tagValues').Environment]",
+          "Tier": "[parameters('tagValues').Tier]",
+		     "Business Unit": "[parameters('tagValues').BusinessUnit]",
+		      "Bill To" : "[parameters('tagValues').BillTo]",
+          "Owner":"[parameters('tagValues').Owner]",
+          "ProjectName":"[parameters('tagValues').ProjectName]",
+		      "ProjectVersion":"[parameters('tagValues').ProjectVersion]",
+          "DataProfile": "[parameters('tagValues').DataProfile]"
+          },
         "sku": {
           "name": "[parameters('serviceBusSku')]"
         },
@@ -63,9 +88,53 @@
               "[concat('Microsoft.ServiceBus/namespaces/', parameters('serviceBusNamespaceName'))]"
             ],
             "properties": {
-              "path": "[parameters('serviceBusTopicName')]"
+              "path": "[parameters('serviceBusTopicName')]",
+              "defaultMessageTimeToLive": "P10675199DT2H48M5.4775807S",
+            "maxSizeInMegabytes": "1024",
+            "requiresDuplicateDetection": "false",
+            "duplicateDetectionHistoryTimeWindow": "PT10M",
+            "enableBatchedOperations": "false",
+            "supportOrdering": "false",
+            "autoDeleteOnIdle": "P10675199DT2H48M5.4775807S",
+            "enablePartitioning": "false",
+            "enableExpress": "false"
             },
-            "resources": []
+            "resources": [
+              {
+                "apiVersion": "2017-04-01",
+                "name": "[parameters('serviceBusSubscriptionName')]",
+                "type": "Subscriptions",
+                "dependsOn": [
+                  "[parameters('serviceBusTopicName')]"
+                ],
+                "properties": {
+                  "lockDuration": "PT1M",
+                  "requiresSession": "false",
+                  "defaultMessageTimeToLive": "P10675199DT2H48M5.4775807S",
+                  "deadLetteringOnMessageExpiration": "false",
+                  "maxDeliveryCount": "10",
+                  "enableBatchedOperations": "false",
+                  "autoDeleteOnIdle": "P10675199DT2H48M5.4775807S"
+                },
+                "resources": [
+                  {
+                    "apiVersion": "2017-04-01",
+                    "name": "[parameters('serviceBusRuleName')]",
+                    "type": "Rules",
+                    "dependsOn": [
+                      "[parameters('serviceBusSubscriptionName')]"
+                    ],
+                    "properties": {
+                      "filterType": "SqlFilter",
+                      "sqlFilter": {
+                        "sqlExpression": "FilterTag = 'true'",
+                        "requiresPreprocessing": "false"
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
           },
           {
             
