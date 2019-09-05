@@ -35,7 +35,13 @@
           "description": "The messaging tier for service Bus namespace"
         }
       },
-      "serviceBusSubscriptionName": {
+      "serviceBusSubscriptionName1": {
+        "type": "string",
+        "metadata": {
+          "description": "Name of the Subscription"
+        }
+      },
+      "serviceBusSubscriptionName2": {
         "type": "string",
         "metadata": {
           "description": "Name of the Subscription"
@@ -102,7 +108,7 @@
             "resources": [
               {
                 "apiVersion": "2017-04-01",
-                "name": "[parameters('serviceBusSubscriptionName')]",
+                "name": "[parameters('serviceBusSubscriptionName1')]",
                 "type": "Subscriptions",
                 "dependsOn": [
                   "[parameters('serviceBusTopicName')]"
@@ -114,6 +120,42 @@
                   "deadLetteringOnMessageExpiration": "false",
                   "maxDeliveryCount": "10",
                   "enableBatchedOperations": "false",
+                  "status":"Active",
+                  "autoDeleteOnIdle": "P10675199DT2H48M5.4775807S"
+                },
+                "resources": [
+                  {
+                    "apiVersion": "2017-04-01",
+                    "name": "[parameters('serviceBusRuleName')]",
+                    "type": "Rules",
+                    "dependsOn": [
+                      "[parameters('serviceBusSubscriptionName')]"
+                    ],
+                    "properties": {
+                      "filterType": "SqlFilter",
+                      "sqlFilter": {
+                        "sqlExpression": "FilterTag = 'true'",
+                        "requiresPreprocessing": "false"
+                      }
+                    }
+                  }
+                ]
+              },
+              {
+                "apiVersion": "2017-04-01",
+                "name": "[parameters('serviceBusSubscriptionName2')]",
+                "type": "Subscriptions",
+                "dependsOn": [
+                  "[parameters('serviceBusTopicName')]"
+                ],
+                "properties": {
+                  "lockDuration": "PT1M",
+                  "requiresSession": "false",
+                  "defaultMessageTimeToLive": "P10675199DT2H48M5.4775807S",
+                  "deadLetteringOnMessageExpiration": "false",
+                  "maxDeliveryCount": "10",
+                  "enableBatchedOperations": "false",
+                  "status":"Active",
                   "autoDeleteOnIdle": "P10675199DT2H48M5.4775807S"
                 },
                 "resources": [
